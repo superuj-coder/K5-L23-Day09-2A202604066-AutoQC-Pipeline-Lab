@@ -53,7 +53,7 @@ Các ảnh đã kiểm tra cho thấy cảnh báo của model hữu ích nhưng 
 
 ## 5. Train: raw vs clean (tùy chọn, chấm riêng)
 
-Chưa chạy train so sánh raw và clean. Phần train Colab là tùy chọn, cần chạy notebook theo hướng dẫn lab; vì chưa có kết quả train nên chưa thể kết luận clean tốt hơn raw.
+Đã train `yolo26n.pt` trong 20 epoch với batch 16, ảnh 640 px và hai seed (0, 1). Raw có 224 ảnh đầu vào; log Ultralytics báo bỏ qua 11 ảnh/nhãn lỗi, còn 213 ảnh theo các đường dẫn bị loại cụ thể. mAP50 trung bình là 0,7258 (raw) và 0,7294 (clean), chênh +0,0036; với hai seed và test 100 ảnh, chưa đủ bằng chứng kết luận clean tốt hơn ổn định. `bus` tăng AP50 nhiều nhất (+0,0204), còn `truck` giảm nhiều nhất (−0,0270). Raw có 11 ảnh bị phát hiện trùng với test/val nên kết quả raw có nguy cơ bị thổi phồng; thí nghiệm này chưa đo riêng mức ảnh hưởng. Phân tích đủ năm câu hỏi và các giới hạn được ghi tại [submission/results/ANALYSIS.md](results/ANALYSIS.md).
 
 ## 6. Quyết định và ghi chú AI
 
